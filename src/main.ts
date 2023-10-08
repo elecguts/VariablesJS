@@ -55,3 +55,41 @@ const numbers = [
   45089, 19300, 11134, 37199, 42492, 17853, 26686, 45539, 18721, 43806, 21208,
   29832,
 ]
+
+function smallestNumber(numberArray: number[]) {
+  let smallest = numberArray[0]
+  for (let position = 0; position < numberArray.length; position++) {
+    if (smallest > numberArray[position]) {
+      smallest = numberArray[position]
+    }
+  }
+  return smallest
+}
+function largestNumber(numberArray: number[]) {
+  let largest = numberArray[0]
+  for (let position = 0; position < numberArray.length; position++) {
+    if (numberArray[position] > largest) {
+      largest = numberArray[position]
+    }
+  }
+  return largest
+}
+function sumOfArray(numberArray: number[]) {
+  let arraySum = 0
+  for (let position = 0; position < numberArray.length; position++) {
+    arraySum = arraySum + numberArray[position]
+  }
+  return arraySum
+}
+
+const smallest = smallestNumber(numbers)
+const largest = largestNumber(numbers)
+const arraySum = sumOfArray(numbers)
+const average = sumOfArray(numbers) / numbers.length
+
+const stats = {
+  smallest: smallest,
+  largest: largest,
+  sum: arraySum,
+  average: average,
+}
